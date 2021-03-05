@@ -18,16 +18,18 @@ out though). The temperature of the pizza should be above 65 0C at the time of d
 
 ## Packages Installed
 
-- dplyr
-**dplyr** is a grammar of data manipulation providing a consistent set of verbs that help you solve the most common data manipulation challenges. These are combined naturally with `group_by()` which allows you to perform any operation "by group".
+- **dplyr** is a grammar of data manipulation providing a consistent set of verbs that help you solve the most common data manipulation challenges. These are combined naturally with `group_by()` which allows you to perform any operation "by group".
 
-    install.packages("dplyr")
+        install.packages("dplyr")
     
- The goal of **readr** is to provide a fast and friendly way to read rectangular data (like 'csv', 'tsv', and 'fwf'). It is designed to flexibly parse many types of data found in the wild, while still cleanly failing when data unexpectedly changes
+ - The goal of **readr** is to provide a fast and friendly way to read rectangular data (like 'csv', 'tsv', and 'fwf'). It is designed to flexibly parse many types of data found in the wild, while still cleanly failing when data unexpectedly changes
+ 
+        install.packages("readr")
 
-After installing the **dplyr** package, you must call its library.
+After installing the **dplyr** and **readr** package, you must call its library.
 
-    library("dplyr")
+        library("dplyr")
+        library("readr")
 
 ## Accesing pizza data via github
 You can access the file thru this url
