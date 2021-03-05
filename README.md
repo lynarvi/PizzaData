@@ -1,5 +1,6 @@
-# PizzaData
-## Definition
+# Pizza Delivery Data: Basic Data Frame Manipulation Using "dplyr" Package 
+
+## Description
 The pizza delivery data (pizza_delivery.csv) is a simulated data set. The data refers to
 an Italian restaurant which offers home delivery of pizza. It contains the orders received
 during a period of one month: May 2014. There are three branches of the restaurant.
@@ -14,3 +15,19 @@ from call to delivery and (ii) the pizza temperature at arrival (which can be do
 special device). Ideally, a pizza arrives within 30 min of the call; if it takes longer than 40
 min, then the customers are promised a free bottle of wine (which is not always handed
 out though). The temperature of the pizza should be above 65 0C at the time of delivery.
+
+## Packages Installed
+**dplyr** is a grammar of data manipulation providing a consistent set of verbs that help you solve the most common data manipulation challenges. These are combined naturally with `group_by()` which allows you to perform any operation "by group".
+
+    install.packages("dplyr")
+
+After installing the **dplyr** package, you must call its library.
+
+    library("dplyr")
+
+## Accesing pizza data via github
+You can access the file thru this url
+
+https://raw.githubusercontent.com/lynarvi/PizzaData/main/pizza_delivery.csv
+
+### Downloading and Importing Pizza Data from Web to R Console
