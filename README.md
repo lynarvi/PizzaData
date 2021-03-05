@@ -26,7 +26,7 @@ out though). The temperature of the pizza should be above 65 0C at the time of d
  
         install.packages("readr")
 
-After installing the **dplyr** and **readr** package, you must call its library.
+After installing the **dplyr** and **readr** packages, you must call its library.
 
         library("dplyr")
         library("readr")
