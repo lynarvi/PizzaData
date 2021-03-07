@@ -39,7 +39,7 @@ https://raw.githubusercontent.com/lynarvi/PizzaData/main/pizza_delivery.csv
 ### Downloading and Importing Pizza Data from Web to R Console
 To directly download and import pizza data to R console use the codes below.
 
-    url = https://raw.githubusercontent.com/lynarvi/PizzaData/main/pizza_delivery.csv
+    url = "https://raw.githubusercontent.com/lynarvi/PizzaData/main/pizza_delivery.csv"
     pizza = read_csv(url(urlfile))
 
 ## Manipulating the Pizza Dataset 
