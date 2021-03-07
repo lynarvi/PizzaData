@@ -131,8 +131,91 @@ You can also omit variables using the `select()` function by using the negative 
         5 Saturday 31-May-14  36.9 Laura    Centre Salvatore        52.8  39  
         6 Saturday 31-May-14  35.7 Melissa  West   Bruno            58.6  42.7
         
+## arrange()
+The `arrange()` function is used to reorder rows of a data frame according to one
+of the variables/columns. Reordering rows of a data frame (while preserving
+corresponding order of other columns) is normally a pain to do in R. The `arrange()`
+function simplifies the process quite a bit.
+
+Suppose we want to arrange the data by time. We will use the codes below.
+
+        pizza.arr = arrange(pizza, time)
+        pizza.arr
+
+        # A tibble: 1,266 x 12
+           day       date       time operator branch driver    temperature  bill pizzas free_wine got_wine discount_customer
+          <chr>     <chr>     <dbl> <chr>    <chr>  <chr>           <dbl> <dbl>  <dbl>     <dbl>    <dbl>             <dbl>
+        1 Tuesday   13-May-14  12.3 Melissa  East   Bruno            84.6  11.9      1         0        0                 0
+        2 Tuesday   06-May-14  13.3 Melissa  East   Bruno            83.8  10.6      1         0        0                 0
+        3 Monday    19-May-14  13.7 Laura    East   Bruno            84.6   9.1      1         0        0                 1
+        4 Sunday    18-May-14  15.1 Melissa  East   Domenico         80.2  26.3      1         0        0                 1
+        5 Sunday    04-May-14  15.4 Laura    East   Domenico         83.4  24.6      1         0        0                 1
+        6 Monday    19-May-14  15.7 Laura    East   Bruno            80.0  15.9      2         0        0                 0
+        7 Monday    05-May-14  16.1 Laura    East   Bruno            79.8  28.9      1         0        0                 0
+        8 Wednesday 14-May-14  16.6 Laura    West   Mario            80.2  12.7      1         0        0                 0
+        9 Friday    02-May-14  16.7 Laura    East   Mario            87.3  10.8      1         0        0                 0
+        10 Monday    12-May-14  16.9 Laura    East   Salvatore        69.5  18.6      1         0        0                 0
+        # ... with 1,256 more rows
+
+## filter()
+The `filter()` function is used to extract subsets of rows from the data frame. This
+function is similar to the existing `subset()` function R but is quite a bit faster in past experiences.
+
+ We want to extract the rows of pizza data where the time is **greater than 50 minutes and temperature is less than 65 C.
+ 
+        pizza.filter = filter(pizza, time > 50 & temperature < 65)
+        pizza.filter
+        
+        # A tibble: 5 x 12
+           day       date       time operator branch driver temperature  bill pizzas free_wine got_wine discount_customer
+           <chr>     <chr>     <dbl> <chr>    <chr>  <chr>        <dbl> <dbl>  <dbl>     <dbl>    <dbl>             <dbl>
+        1 Wednesday 07-May-14  52.2 Laura    Centre Mario         64.8  55.9      7         1        1                 0
+        2 Friday    09-May-14  51.2 Laura    West   Luigi         57.9  42.3      4         1        1                 0
+        3 Sunday    18-May-14  53.1 Laura    West   Bruno         61.8  56.8      2         1        1                 0
+        4 Tuesday   27-May-14  52.3 Melissa  Centre Bruno         58.3  42.9      4         1        1                 0
+        5 Thursday  29-May-14  51.1 Laura    Centre Mario         53.9  40.5      3         1        1                 0
 
 
+## summary()
+`summary()` function is a generic function used to produce result summaries of the results of various model fitting functions. The function invokes particular methods which depend on the class of the first argument. 
+
+In this case, we want to find the summary of the **time, temperature, bill, pizzas** in pizza data.
+
+        time = summary(pizza$time) 
+        temp = summary(pizza$temperature) 
+        bill = summary(pizza$bill)
+        pizzas = summary(pizza$pizzas)
+
+After getting the summaries of the given variables, we will make a matrix and export it as a **CSV** file.
+
+        matrix = rbind(time,temp,bill,pizzas)
+        matrix
+       
+                 Min.  1st Qu.   Median      Mean  3rd Qu.     Max.
+        time   12.26603 30.06115 34.38196 34.229551 38.57702 53.09626
+        temp   41.75872 58.24236 62.92666 62.863950 67.22863 87.58242
+        bill    9.10000 35.50000 42.90000 42.755924 50.50000 75.00000
+        pizzas  1.00000  2.00000  3.00000  3.013428  4.00000 11.00000
+        
+        write.csv(matrix,"D:/summary.csv")
+
+## quantile()
+The generic function `quantile` produces sample quantiles corresponding to the given probabilities. The smallest observation corresponds to a probability of 0 and the largest to a probability of 1.
+
+In this partwe will determine and interpret the 99% quantile for delivery time and temperature.
+
+        #time
+        quantile(pizza$time,probs=.99)
+             99% 
+        48.61677 
+
+        #temperature
+        quantile(pizza$temperature,probs=.99)
+             99% 
+        79.87 
+
+        
+        
 
 
 
