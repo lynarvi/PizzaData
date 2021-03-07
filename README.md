@@ -213,9 +213,31 @@ In this partwe will determine and interpret the 99% quantile for delivery time a
         quantile(pizza$temperature,probs=.99)
              99% 
         79.87 
+  
+ Based on the result, delivery time are 48.62 min. and the temperature is 79.87 degree celsius, .99% of the delivery times are less than or equal to 48.62 min and 1% of deliveries are greater than or equal to 48.62 min. Only 1% of pizzas were delivered with a temperature greater than 79.87 degree celsius.
+ 
+## table()
 
-        
-        
+`table` uses the cross-classifying factors to build a contingency table of the counts at each combination of factor levels.
+
+To make a new binary variables that describes whether a pizza was hot (>65◦C) and the delivery time was short (<30 min), we will use the codes below
+
+      tempcat <-ifelse(pizza$temperature>65,"(65,100]","(0,65]")
+      timecat <-ifelse(pizza$time>30,"(30,100]","(0,30]")  
+
+After making binary variables, we will make a contingency table out of it.
+
+      ctable = table(tempcat,timecat)
+      ctable = addmargins(ctable)
+      ctable
+      
+                  timecat
+        tempcat    (0,30] (30,100]  Sum
+         (0,65]      101      691  792
+        (65,100]    213      261  474
+         Sum         314      952 1266
+
+      
 
 
 
