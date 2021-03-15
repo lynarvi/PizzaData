@@ -216,7 +216,6 @@ In this partwe will determine and interpret the 99% quantile for delivery time a
   
 The results are 48.62 min for delivery time and 79.87 ◦C for temperature. This means 99 % of the delivery times are less than or equal to 48.62 min and 1 % of deliveries are greater than or equal to 48.62 min. Similarly, only 1 % of pizzas were delivered with a temperature greater than 79.87 ◦C.
 
-We can see that there is a higher proportion of high temperature ((65,100]) in the category of short delivery times ((0,30]).
  
 ## table()
 
@@ -239,7 +238,7 @@ After making binary variables, we will make a contingency table out of it.
         (65,100]    213      261  474
          Sum         314      952 1266
 
-      
+We can see that there is a higher proportion of high temperature ((65,100]) in the category of short delivery times ((0,30]).  
 
 
 
