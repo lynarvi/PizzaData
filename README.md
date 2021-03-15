@@ -242,13 +242,7 @@ After making binary variables, we will make a contingency table out of it.
 We can see that there is a higher proportion of high temperature ((65,100]) in the category of short delivery times ((0,30]).  
 
 
-##### Contributors to this Document:
-- Mae Aranga
-- Shannie Marie Paunon
-- Kenny Marie Berguia 
-- Mary Dhen Azucena
-- Krizel JOy Cabaya
-- Arvilyn Mellizas
+
 
 
 
