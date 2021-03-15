@@ -1,10 +1,3 @@
-##### People who contributed to this document:
-- Mae Aranga
-- Shannie Marie Paunon
-- Kenny MArie Berguia
-- Mary Dhen Azucena
-- Krizel Joy Cabaya
-
 
 # Pizza Delivery Data: Basic Data Frame Manipulation Using "dplyr" Package 
 
